@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Amazon Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="C:\Users\ANIKET\Downloads\wad practiles\e commerce  dashboard.css">
+
+    <!-- Chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="d-flex">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h4 class="logo"> amazon </h4>
+
+        <ul class="nav flex-column">
+            <li><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="#"><i class="fas fa-chart-bar"></i> Charts</a></li>
+            <li><a href="#"><i class="fas fa-cube"></i> Components</a></li>
+            <li><a href="#"><i class="fas fa-layer-group"></i> Layouts</a></li>
+            <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <!-- Topbar -->
+        <div class="topbar d-flex justify-content-between align-items-center">
+            <input type="text" placeholder="type to search">
+            <div>
+                <i class="fas fa-bell"></i>
+                <i class="fas fa-user ms-3"></i>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="container-fluid mt-4">
+
+            <!-- Cards -->
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="card stat blue">
+                        <div>
+                            <h6>Sign ups</h6>
+                            <h2>114</h2>
+                        </div>
+                        <p>+25% from last month</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card stat green">
+                        <div>
+                            <h6>Revenue</h6>
+                            <h2>$25,541</h2>
+                        </div>
+                        <p>+17.5% from last month</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card stat red">
+                        <div>
+                            <h6>Open Tickets</h6>
+                            <h2>5</h2>
+                        </div>
+                        <p>Support requests</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="row mt-4 align-items-stretch">
+
+                <!-- Chart -->
+                <div class="col-md-8 d-flex">
+                    <div class="card p-3 w-100">
+                        <h5>Bar Chart</h5>
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Notifications -->
+                <div class="col-md-4 d-flex">
+                    <div class="card p-3 w-100">
+                        <h5>Notifications</h5>
+
+                        <ul class="list-group list-group-flush mt-3">
+
+                            <li class="list-group-item d-flex justify-content-between">
+                                🛒 New order received
+                                <span class="time">2 min ago</span>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between">
+                                💰 Payment successful
+                                <span class="time">10 min ago</span>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between">
+                                👤 New user registered
+                                <span class="time">30 min ago</span>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between">
+                                📦 Order shipped
+                                <span class="time">1 hour ago</span>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Chart Script -->
+<script>
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        datasets: [{
+            label: 'Sales',
+            data: [12, 19, 3, 5, 2],
+            borderWidth: 1
+        }]
+    }
+});
+</script>
+
+</body>
+</html>
